@@ -8,14 +8,16 @@
 @endphp
 <html>
 	<head>
-		<style>body {
+		<style>
+			body {
 				background-image: url("https://leichtbewaff.net/invite/storage/app/public/cover_images/overlay.png"), 
 				url("https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->bg_jpg}}");
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-color: white;
 				background-size: cover !important;
-			}</style>
+			}
+		</style>
 		<title>{{$var[0]->title}}</title>
 		<meta name="names_id" data-id="{{$var[0]->names_id}}">
 		<meta charset="utf-8" />
