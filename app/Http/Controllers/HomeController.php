@@ -48,7 +48,7 @@ class HomeController extends Controller
             'pic_jpg' => 'image|nullable|max:1999',
             'bg_jpg' => 'image|nullable|max:1999'
         ]);
-        
+        #aaa
         function doImage($image,$request)
         {
             if($request->hasFile($image)){
