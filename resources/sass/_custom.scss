@@ -1,0 +1,39 @@
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+//Custom CSS to compile
+html, body {
+    height: 100%;
+}
+.card-header{
+    background-color: #e3f2fd;
+}
+
+.navbar_my {
+    background-color: #e3f2fd;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+}
+
+.form_my {
+    margin: 10px 10px 10px 10px;
+}
+
+.card{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+}
+
+.my_but{
+    font-size: 18px;
+    color: white;
+}
+
+.input-group{
+    margin:4px 0 0 0;
+}
+
+input[readonly], input[readonly="readonly"]
+{
+    background-color:white !important;
+}
