@@ -48,8 +48,6 @@ class HomeController extends Controller
             'pic_jpg' => 'image|nullable|max:1999',
             'bg_jpg' => 'image|nullable|max:1999'
         ]);
-
-        #asdasd
         
         function doImage($image,$request)
         {
