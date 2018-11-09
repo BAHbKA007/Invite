@@ -29,6 +29,7 @@
 		<meta property="og:url" content="https://leichtbewaff.net/home/{{$var[0]->hash}}" />
 		<meta property="og:description" content="{{str_replace(',',' und ',str_replace(' ','',$var[0]->names))}}">
 		<meta property="og:image" content="https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->pic_jpg}}">
+		<meta property="og:image:secure_url" content="https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->pic_jpg}}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="de_DE" />
         <!-- ****** faviconit.com Favicons ****** -->
