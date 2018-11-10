@@ -2,7 +2,7 @@
 if (App::environment('local')) {
     $pfad_assets = 'http://127.0.0.1/';
 } else {
-    $pfad_assets = 'https://leichtbewaff.net/';
+    $pfad_assets = 'https://leichtbewaff.net/invite/public/';
 }
 @endphp
 <!doctype html>
