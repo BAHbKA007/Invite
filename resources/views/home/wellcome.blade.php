@@ -8,7 +8,7 @@
 if (App::environment('local')) {
     $pfad_storage_pictures = 'http://127.0.0.1/storage/cover_images/';
 } else {
-    $pfad_storage_pictures = 'invite/storage/app/public/cover_images/';
+    $pfad_storage_pictures = 'https://leichtbewaff.net/invite/storage/app/public/cover_images/';
 }
 @endphp
 <html>
