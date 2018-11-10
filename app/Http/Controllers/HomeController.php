@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManagerStatic as Image;
 use App;
 use URL;
 
@@ -52,12 +53,32 @@ class HomeController extends Controller
 
         function doImage($image,$request)
         {
+
+            if (App::environment('local')) {
+                $pfad = 'storage/cover_images/';
+            } else {
+                $pfad = 'invite/storage/app/public/cover_images/';
+            }
+
             if($request->hasFile($image)){
+
                 $filenameWithExt = $request->file($image)->getClientOriginalName();
                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $extension = $request->file($image)->getClientOriginalExtension();
                 $fileNameToStore = str_replace(' ','_',str_replace('_jpg','',$image).$filename.'_'.time().'.'.$extension);
-                $path = $request->file($image)->storeAs('public/cover_images',$fileNameToStore);
+
+                //resize wenn pic_jpg (whattsapp erlaubt keine Bilder > 300kb als Vorschau)
+                if ($image == 'bg_jpg') {
+                    $path = $request->file($image)->storeAs('public/cover_images',$fileNameToStore);
+                } else {
+                    $img = Image::make($_FILES[$image]['tmp_name'])
+                    ->resize(850, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($pfad.$fileNameToStore,80);
+                }
+
             } else {
 
                 if ($image == 'bg_jpg') {

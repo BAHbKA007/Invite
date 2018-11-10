@@ -1,6 +1,6 @@
 <?php
 if (App::environment('local')) {
-    $pfad_storage_pictures = 'storage/cover_images/';
+    $pfad_storage_pictures = 'http://127.0.0.1/storage/cover_images/';
 } else {
     $pfad_storage_pictures = 'invite/storage/app/public/cover_images/';
 }
@@ -20,7 +20,7 @@ if (App::environment('local')) {
                 </div>
                 <ul style="z-index:100" class="list-group list-group-flush">
                     @foreach ($projects as $project)
-                        <div style="background-image: url('{{$pfad_storage_pictures.$project->pic_jpg}}');filter: blur(4px);-webkit-filter: blur(4px);height: 60px;background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
+                        <div style="background-image: url('{{$pfad_storage_pictures.$project->pic_jpg}}');filter: blur(2px);-webkit-filter: blur(2px);height: 60px;background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
                         <li style="z-index:100" class="list-group-item">{{$project->title}} <small>erstellt am {{\Carbon\Carbon::parse($project->created_at)->format('d.m.Y')}}</small>
                         <div>
                             <a href="/invite/{{$project->id}}" class="btn btn-primary float-right" role="button" aria-pressed="true">einladen</a>

@@ -6,7 +6,7 @@
 -->
 @php
 if (App::environment('local')) {
-    $pfad_storage_pictures = 'storage/cover_images/';
+    $pfad_storage_pictures = 'http://127.0.0.1/storage/cover_images/';
 } else {
     $pfad_storage_pictures = 'invite/storage/app/public/cover_images/';
 }
@@ -15,8 +15,8 @@ if (App::environment('local')) {
 	<head>
 		<style>
 			body {
-				background-image: url("https://leichtbewaff.net/invite/storage/app/public/cover_images/overlay.png"), 
-				url("https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->bg_jpg}}");
+				background-image: url("{{$pfad_storage_pictures}}overlay.png"), 
+				url("{{$pfad_storage_pictures.$var[0]->bg_jpg}}");
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-color: white;
@@ -35,8 +35,8 @@ if (App::environment('local')) {
 		<meta property="og:title" content="{{$var[0]->title}}" />
 		<meta property="og:url" content="https://leichtbewaff.net/home/{{$var[0]->hash}}" />
 		<meta property="og:description" content="{{str_replace(',',' und ',str_replace(' ','',$var[0]->names))}}">
-		<meta property="og:image" content="https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->pic_jpg}}">
-		<meta property="og:image:secure_url" content="https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->pic_jpg}}" />
+		<meta property="og:image" content="{{$pfad_storage_pictures.$var[0]->pic_jpg}}">
+		<meta property="og:image:secure_url" content="{{$pfad_storage_pictures.$var[0]->pic_jpg}}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="de_DE" />
         <!-- ****** faviconit.com Favicons ****** -->
@@ -114,7 +114,7 @@ if (App::environment('local')) {
 								</header>
 								<a href="#Location" class="jumplink pic">
 									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-									<img src="https://leichtbewaff.net/invite/storage/app/public/cover_images/{{$var[0]->pic_jpg}}" alt="" />
+									<img src="{{$pfad_storage_pictures.$var[0]->pic_jpg}}" alt="" />
 								</a>
 	
 							</article>
