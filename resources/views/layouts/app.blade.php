@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <title>{{config('app.name', 'Invite')}}</title>
-        <!-- ****** faviconit.com Favicons ****** -->
+        <!-- ****** faviconit.com Favicons ****** -->asdasd
         <link rel="shortcut icon" href="https://leichtbewaff.net/invite/storage/app/public/cover_images/favicon/favicon.ico">
         <link rel="icon" sizes="16x16 32x32 64x64" href="https://leichtbewaff.net/invite/storage/app/public/cover_images/favicon/favicon.ico">
         <link rel="icon" type="image/png" sizes="196x196" href="https://leichtbewaff.net/invite/storage/app/public/cover_images/favicon/favicon-192.png">
