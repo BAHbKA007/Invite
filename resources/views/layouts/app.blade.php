@@ -1,3 +1,10 @@
+@php
+if (App::environment('local')) {
+    $pfad_assets = 'http://127.0.0.1/';
+} else {
+    $pfad_assets = 'https://leichtbewaff.net/';
+}
+@endphp
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -5,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset($pfad_assets.'css/app.css')}}">
         <title>{{config('app.name', 'Invite')}}</title>
         <!-- ****** faviconit.com Favicons ****** -->
         <link rel="shortcut icon" href="https://leichtbewaff.net/invite/storage/app/public/cover_images/favicon/favicon.ico">
@@ -39,7 +46,7 @@
         @yield('content')
         </main>
     </body>
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset($pfad_assets.'js/app.js')}}"></script>
     <script>
         $(document).ready(function(){
             $('[data-toggle="popover"]').popover()});
