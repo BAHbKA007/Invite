@@ -69,7 +69,9 @@
 					<nav id="nav" style="font-size: 25px">
 						<a href="#" class="icon fa-home active" ><span>Home</span></a>
 						<a href="#Location" class="icon fa-map-marker"><span>Location</span></a>
+						@if (isset($var[0]->phone))
 						<a href="#Kontakt" class="icon fa-envelope"><span>Kontakt</span></a>
+						@endif
 					</nav>
 
 				<!-- Main -->
