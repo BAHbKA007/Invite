@@ -70,7 +70,7 @@ class InviteController extends Controller
                 'absagen' => $absagen
             ];    
             // return view('invite.ajax', ['names' => $names], ['id' => $id]);
-            return view('invite.ajax', ['var' => $var]);
+            return view('invite.invite', ['var' => $var]);
         } else {
             return redirect('/home');
         }

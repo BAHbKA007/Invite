@@ -18,8 +18,8 @@
                         <input type="text" class="form-control" aria-describedby="button-addon2" value="{{$name->names}}" readonly>
                             <div class="input-group-append">
                                 <a class="btn btn-primary" href="../home/{{$name->hash}}?nocount=1" type="button" data-id="{{$name->id}}"><i style="width: 20px; height: 20px;" class="my_but fab fa-safari"></i></a>
-                                <a style="width: 46px; height: 37px;" class="btn btn-success" href="whatsapp://send?text={{urlencode('Hallo '.str_replace(',',' und ', str_replace(' ','',$name->names))).'%0D%0A%0D%0A'.$var['whattsapp'].'%0D%0A%0D%0A'.urlencode('*'.$name->bitly.'*')}}" type="button" data-id="{{$name->id}}">
-                                    <i class="my_but fab fa-whatsapp"></i></a>
+                                <a class="btn btn-success" href="whatsapp://send?text={{urlencode('Hallo '.str_replace(',',' und ', str_replace(' ','',$name->names))).'%0D%0A%0D%0A'.$var['whattsapp'].'%0D%0A%0D%0A'.urlencode('*'.$name->bitly.'*')}}" type="button" data-id="{{$name->id}}">
+                                    <i style="width: 20px; height: 20px;" class="my_but fab fa-whatsapp"><span style="font-size:10px; font-family:'Trebuchet MS', Helvetica, sans-serif;"> @if ($name->count > 0) {{$name->count}}@endif</span></i></a>
                                 <a class="btn btn-danger del" type="button" data-id="{{$name->id}}"><i style="width: 20px; height: 20px;" class="my_but far fa-trash-alt"></i></a>
                             </div>
                         </div>
