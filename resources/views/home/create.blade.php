@@ -35,12 +35,12 @@
                         {{Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'bitte in der Form: 49152372588'])}}
                     </div>
                     <div class="form-group form_my">
-                        {{Form::label('bg_jpg', 'Hintergrund:')}}<br>
-                        {{Form::file('bg_jpg')}}
-                    </div>
-                    <div class="form-group form_my">
                         {{Form::label('pic_jpg', 'Bild Startseite:')}}<br>
                         {{Form::file('pic_jpg')}}
+                    </div>
+                    <div class="form-group form_my">
+                        {{Form::label('bg_jpg', 'Hintergrund:')}}<br>
+                        {{Form::file('bg_jpg')}}
                     </div>
                    {{Form::submit('erstellen', ['class' => 'btn btn-primary float-right', 'style' => 'margin: 10px 10px 10px 10px'])}}
                    <a type="button" href="/" class="btn btn-Secondary float-left" style="margin: 10px 10px 10px 10px">zurück</a>

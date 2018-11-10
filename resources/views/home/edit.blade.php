@@ -28,12 +28,12 @@
                         {{Form::text('phone', $project->phone, ['class' => 'form-control', 'placeholder' => '49'])}}
                     </div>
                     <div class="form-group form_my">
-                        {{Form::label('bg_jpg', 'Hintergrund:')}}<br>
-                        {{Form::file('bg_jpg')}}
-                    </div>
-                    <div class="form-group form_my">
                         {{Form::label('pic_jpg', 'Bild Startseite:')}}<br>
                         {{Form::file('pic_jpg')}}
+                    </div>
+                    <div class="form-group form_my">
+                        {{Form::label('bg_jpg', 'Hintergrund:')}}<br>
+                        {{Form::file('bg_jpg')}}
                     </div>
                     {{Form::hidden('_method', 'PUT')}}
                     {{Form::submit('Daten aktualisieren', ['class' => 'btn btn-primary float-right', 'style' => 'margin: 10px 10px 10px 10px'])}}
