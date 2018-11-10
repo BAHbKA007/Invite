@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App;
 use URL;
 
 class HomeController extends Controller
@@ -148,8 +149,13 @@ class HomeController extends Controller
 
         function doImage($image,$request,$id)
         {
-            $pfad = 'invite/storage/app/public/cover_images/';      //Server
 
+            if (App::environment('local')) {
+                $pfad = 'storage/cover_images/';
+            } else {
+                $pfad = 'invite/storage/app/public/cover_images/';
+            }
+    
             if($request->hasFile($image)){
                 $project = DB::select('SELECT bg_jpg,pic_jpg FROM projects WHERE id = ?', [$id])[0];
 
@@ -204,8 +210,13 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        $pfad = 'invite/storage/app/public/cover_images/';      //Server
 
+        if (App::environment('local')) {
+            $pfad = 'storage/cover_images/';
+        } else {
+            $pfad = 'invite/storage/app/public/cover_images/';
+        }
+        
         $project = DB::table('projects')->where('id', $id)->first();
         if ($project->user_id == Auth::id()) {
             if ($project->bg_jpg != 'bg.jpg') {

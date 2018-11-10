@@ -5,6 +5,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)asdasd
 -->
 @php
+if (App::environment('local')) {
+    $pfad_storage_pictures = 'storage/cover_images/';
+} else {
+    $pfad_storage_pictures = 'invite/storage/app/public/cover_images/';
+}
 @endphp
 <html>
 	<head>
